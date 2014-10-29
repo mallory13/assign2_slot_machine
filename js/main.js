@@ -62,6 +62,46 @@ function init(){
 
 
 /*set image variables*/
+grapes = new Image();
+grapes.src = "images/grapes.png";
+grapes.onload = resetFruitTally;
+
+bananas = new Image();
+bananas.src = "images/bananas.png";
+bananas.onload = resetFruitTally;
+
+oranges = new Image();
+oranges.src = "images/oranges.png";
+oranges.onload = resetFruitTally;
+
+cherries = new Image();
+cherries.src = "images/cherries.png";
+cherries.onload = resetFruitTally;
+
+bars = new Image();
+bars.src = "images/bars.png";
+bars.onload = resetFruitTally;
+
+bells = new Image();
+bells.src = "images/bells.png";
+bells.onload = resetFruitTally;
+
+sevens = new Image();
+sevens.src = "images/sevens.png";
+sevens.onload = resetFruitTally;
+
+blanks = new Image();
+blanks.src = "images/blanks.png";
+blanks.onload = resetFruitTally;
+
+
+/*Set the background*/
+bg = new Image();
+bg.src="images/slot_bgd.png";
+
+
+
+
 
 }
 
