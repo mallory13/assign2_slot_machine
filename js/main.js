@@ -37,17 +37,27 @@ function init(){
 	canvas = document.getElementById("canvas");
 	stage = new Stage (canvas);
 	
+	
+/*Accept input for player bet*/
+
+
 
 /*Set coordinates for bet text output*/
-
+	betText = new Text(playerBet);
+	betText.x = 357;
+	betText.y = 459;
 
 
 /*Set coordinates for credit text output*/
-
+	creditText = new Text(playerMoney);
+	creditText.x = 179;
+	creditText.y = 459;
 
 
 /*Set coordinates for winnings text output*/
-
+	winningsText = new Text(winnings);
+	winningsText.x = 494;
+	winningsText.y = 459;
 
 
 
