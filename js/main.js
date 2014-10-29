@@ -33,7 +33,10 @@ var column3;
 
 
 /*set up canvas and stage*/
-
+function init(){
+	canvas = document.getElementById("canvas");
+	stage = new Stage (canvas);
+	
 
 /*Set coordinates for bet text output*/
 
@@ -50,7 +53,7 @@ var column3;
 
 /*set image variables*/
 
-
+}
 
 /* Utility function to show Player Stats */
 function showPlayerStats()
