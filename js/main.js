@@ -27,9 +27,9 @@ var spin;
 var reset;
 var quit;
 var bg;
-var column1;
-var column2;
-var column3;
+var reel1;
+var reel2;
+var reel3;
 
 
 /*set up canvas and stage*/
@@ -100,9 +100,27 @@ bg = new Image();
 bg.src="images/slot_bgd.png";
 
 
+/*set reset button*/
+reset = stage.addChild
+reset.x = 52;
+reset.y = 22;
+reset = document.getElementById("resetButton");
+
+/*set spin button*/
+spin = stage.addChild
+spin.x = 637;
+spin.y = 462;
+spin = document.getElementById("spinButton");
 
 
-
+/*set exit button*/
+quit = stage.addChild
+quit.x = 662;
+quit.y = 22;
+quit.click(function(){
+	this.exit;
+});
+stage.update();
 }
 
 /* Utility function to show Player Stats */

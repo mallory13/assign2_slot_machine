@@ -7,7 +7,7 @@
     <link href="css/main.css" rel="stylesheet" />
     <script src="http://code.createjs.com/createjs-2013.12.12.min.js"></script>
 </head>
-<body>
+<body onLoad="init();">
     <div>
         <h1>Slot Machine</h1>
         <div>
@@ -47,9 +47,11 @@
         <p></p>
     </div>
 
-
+<canvas id="canvas" width="960" height="580"></canvas>
     <!-- JavaScript Section -->
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
+    
+    
 </body>
 </html>
