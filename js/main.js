@@ -18,6 +18,40 @@ var bells = 0;
 var sevens = 0;
 var blanks = 0;
 
+var canvas;
+var stage;
+var betText;
+var creditText;
+var winningsText;
+var spin;
+var reset;
+var quit;
+var bg;
+var column1;
+var column2;
+var column3;
+
+
+/*set up canvas and stage*/
+
+
+/*Set coordinates for bet text output*/
+
+
+
+/*Set coordinates for credit text output*/
+
+
+
+/*Set coordinates for winnings text output*/
+
+
+
+
+/*set image variables*/
+
+
+
 /* Utility function to show Player Stats */
 function showPlayerStats()
 {
