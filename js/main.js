@@ -35,93 +35,131 @@ var reel3;
 /*set up canvas and stage*/
 function init(){
 	canvas = document.getElementById("canvas");
-	stage = new Stage (canvas);
+	stage = new createjs.Stage (canvas);
+	stage.enableMouseOver(20);
+	createjs.Ticker.addEventListener("tick", gameLoop);
+	createjs.Ticker.setFPS(60);
+	setBG();
+	drawSlot();
 	
+	
+	
+}
+
+function gameLoop (){
+	
+	stage.update();
+}
+
+function drawSlot(){
+	
+	
+/*Set the background*/
+bg = new createjs.Bitmap();
+bg.src="images/slot_bgd.png";
+bg.onload = setBG;
+
+
 	
 /*Accept input for player bet*/
 
 
 
 /*Set coordinates for bet text output*/
-	betText = new Text(playerBet);
+	betText = new createJS.Text(playerBet);
 	betText.x = 357;
 	betText.y = 459;
 
 
 /*Set coordinates for credit text output*/
-	creditText = new Text(playerMoney);
+	creditText = new createJS.Text(playerMoney);
 	creditText.x = 179;
 	creditText.y = 459;
 
 
 /*Set coordinates for winnings text output*/
-	winningsText = new Text(winnings);
+	winningsText = new createJS.Text(winnings);
 	winningsText.x = 494;
 	winningsText.y = 459;
 
 
+/*Set reels*/
+
+
+
 
 /*set image variables*/
-grapes = new Image();
-grapes.src = "images/grapes.png";
-grapes.onload = resetFruitTally;
-
-bananas = new Image();
-bananas.src = "images/bananas.png";
-bananas.onload = resetFruitTally;
-
-oranges = new Image();
-oranges.src = "images/oranges.png";
-oranges.onload = resetFruitTally;
-
-cherries = new Image();
-cherries.src = "images/cherries.png";
-cherries.onload = resetFruitTally;
-
-bars = new Image();
-bars.src = "images/bars.png";
-bars.onload = resetFruitTally;
-
-bells = new Image();
-bells.src = "images/bells.png";
-bells.onload = resetFruitTally;
-
-sevens = new Image();
-sevens.src = "images/sevens.png";
-sevens.onload = resetFruitTally;
-
-blanks = new Image();
-blanks.src = "images/blanks.png";
-blanks.onload = resetFruitTally;
+grapes = new createJS.Bitmap("images/grapes.png");
 
 
-/*Set the background*/
-bg = new Image();
-bg.src="images/slot_bgd.png";
+bananas = new createjs.Bitmap("images/bananas.png");
+
+
+oranges = new createjs.Bitmap("images/oranges.png");
+
+
+cherries = new createjs.Bitmap("images/cherries.png");
+
+
+bars = new createjs.Bitmap("images/bars.png");
+
+
+bells = new createjs.Bitmap("images/bells.png");
+
+
+sevens = new createjs.Bitmap("images/sevens.png");
+
+
+blanks = new createjs.Bitmap("images/blanks.png");
+
+
+
+
 
 
 /*set reset button*/
-reset = stage.addChild
+reset = new createjs.Bitmap("images/reset.png");
 reset.x = 52;
 reset.y = 22;
-reset = document.getElementById("resetButton");
+stage.addChild(reset)
+resetAll();
 
 /*set spin button*/
-spin = stage.addChild
+spin = new createjs.Bitmap("images/spin.png");
 spin.x = 637;
 spin.y = 462;
-spin = document.getElementById("spinButton");
+stage.addChild(spin)
+startGame();
 
 
 /*set exit button*/
-quit = stage.addChild
+quit = new createjs.Bitmap("images/quit.png");
 quit.x = 662;
 quit.y = 22;
+stage.addChild(quit)
 quit.click(function(){
 	this.exit;
 });
-stage.update();
+
+function swapImage() {
+            var bmp = new createjs.Bitmap(imagesPaths[index]);
+            bmp.image.onload = function () {
+                imageContainer.removeAllChildren();
+                imageContainer.addChild(bmp);
+            }
 }
+
+}
+
+
+/*function to set the background*/
+function setBG(event){
+	var bgrnd = new createjs.Bitmap(bg);
+	stage.addChild(bgrnd);
+	stage.update();	
+	
+}
+
 
 /* Utility function to show Player Stats */
 function showPlayerStats()
@@ -310,7 +348,7 @@ function determineWinnings()
 }
 
 /* When the player clicks the spin button the game kicks off */
-$("#spinButton").click(function () {
+$("#spinButton").click(function startGame() {
     playerBet = $("div#betEntry>input").val();
 
     if (playerMoney == 0)
